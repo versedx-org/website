@@ -1,0 +1,220 @@
+.case-studies {
+	position: relative;
+}
+
+.case-studies-carousel {
+	position: relative;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.carousel-container {
+	position: relative;
+	overflow: hidden;
+	border-radius: var(--radius-xl);
+}
+
+.case-study-card {
+	display: none;
+	background: var(--bg-card);
+	border: 1px solid var(--border-subtle);
+	border-radius: var(--radius-xl);
+	overflow: hidden;
+	backdrop-filter: blur(20px);
+}
+
+.case-study-card.active {
+	display: grid;
+	grid-template-columns: 1fr 1.2fr;
+	animation: fadeIn 0.5s ease;
+}
+
+.case-study-visual {
+	position: relative;
+	min-height: 400px;
+	background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
+}
+
+.visual-placeholder {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.visual-grid {
+	position: absolute;
+	inset: 0;
+	background-image:
+		linear-gradient(rgba(118, 185, 0, 0.1) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(118, 185, 0, 0.1) 1px, transparent 1px);
+	background-size: 30px 30px;
+	animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+	0% {
+		transform: translate(0, 0);
+	}
+
+	100% {
+		transform: translate(30px, 30px);
+	}
+}
+
+.visual-glow {
+	width: 200px;
+	height: 200px;
+	background: var(--nvidia-green);
+	border-radius: 50%;
+	filter: blur(80px);
+	opacity: 0.3;
+}
+
+.visual-placeholder.manufacturing .visual-glow {
+	background: var(--nvidia-green);
+}
+
+.visual-placeholder.smartcity .visual-glow {
+	background: var(--accent-secondary);
+}
+
+.visual-placeholder.entertainment .visual-glow {
+	background: linear-gradient(135deg, #ff6b6b, #feca57);
+}
+
+.case-study-content {
+	padding: var(--space-xl);
+	display: flex;
+	flex-direction: column;
+}
+
+.case-study-industry {
+	display: inline-block;
+	background: rgba(118, 185, 0, 0.15);
+	color: var(--nvidia-green);
+	padding: 0.375rem 0.875rem;
+	border-radius: var(--radius-full);
+	font-size: var(--font-size-xs);
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	margin-bottom: var(--space-md);
+	width: fit-content;
+}
+
+.case-study-title {
+	font-size: var(--font-size-2xl);
+	font-weight: 700;
+	margin-bottom: var(--space-xs);
+	color: var(--text-primary);
+}
+
+.case-study-client {
+	font-size: var(--font-size-sm);
+	color: var(--text-muted);
+	margin-bottom: var(--space-md);
+}
+
+.case-study-description {
+	font-size: var(--font-size-base);
+	color: var(--text-secondary);
+	line-height: 1.7;
+	margin-bottom: var(--space-lg);
+}
+
+.case-study-results h4 {
+	font-size: var(--font-size-sm);
+	font-weight: 600;
+	color: var(--text-muted);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	margin-bottom: var(--space-sm);
+}
+
+.case-study-results ul {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-xs);
+}
+
+.case-study-results li {
+	display: flex;
+	align-items: center;
+	gap: var(--space-xs);
+	font-size: var(--font-size-sm);
+	color: var(--text-secondary);
+}
+
+.case-study-results li svg {
+	width: 18px;
+	height: 18px;
+	color: var(--nvidia-green);
+	flex-shrink: 0;
+}
+
+.carousel-controls {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-lg);
+	margin-top: var(--space-lg);
+}
+
+.carousel-btn {
+	width: 48px;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--bg-glass);
+	border: 1px solid var(--border-subtle);
+	border-radius: 50%;
+	color: var(--text-secondary);
+	transition: all var(--transition-base);
+}
+
+.carousel-btn:hover {
+	background: var(--nvidia-green);
+	color: var(--bg-primary);
+	border-color: var(--nvidia-green);
+}
+
+.carousel-btn svg {
+	width: 20px;
+	height: 20px;
+}
+
+.carousel-dots {
+	display: flex;
+	gap: var(--space-xs);
+}
+
+.carousel-dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: var(--border-subtle);
+	transition: all var(--transition-base);
+}
+
+.carousel-dot.active {
+	background: var(--nvidia-green);
+	transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+	.case-study-card.active {
+		grid-template-columns: 1fr;
+	}
+
+	.case-study-visual {
+		min-height: 200px;
+	}
+
+	.case-study-content {
+		padding: var(--space-lg);
+	}
+}

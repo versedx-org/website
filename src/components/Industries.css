@@ -1,0 +1,55 @@
+.industries {
+	position: relative;
+}
+
+.industries-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: var(--space-md);
+}
+
+.industry-card {
+	padding: var(--space-lg);
+	border-radius: var(--radius-lg);
+	background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
+	border: 1px solid var(--border-subtle);
+	text-align: center;
+	transition: all var(--transition-base);
+	cursor: default;
+}
+
+.industry-card:hover {
+	transform: translateY(-4px);
+	border-color: var(--nvidia-green);
+	box-shadow: var(--shadow-glow);
+}
+
+.industry-icon {
+	font-size: 2.5rem;
+	display: block;
+	margin-bottom: var(--space-sm);
+}
+
+.industry-name {
+	font-size: var(--font-size-lg);
+	font-weight: 600;
+	margin-bottom: var(--space-xs);
+	color: var(--text-primary);
+}
+
+.industry-description {
+	font-size: var(--font-size-sm);
+	color: var(--text-muted);
+}
+
+@media (max-width: 1024px) {
+	.industries-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 640px) {
+	.industries-grid {
+		grid-template-columns: 1fr;
+	}
+}
