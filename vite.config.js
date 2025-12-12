@@ -6,5 +6,6 @@ const isCI = !!process.env.GITHUB_ACTIONS
 const base = repoName ? `/${repoName}/` : '/'
 // https://vite.dev/config/
 export default defineConfig({
+  base,
   plugins: [react()],
 })
